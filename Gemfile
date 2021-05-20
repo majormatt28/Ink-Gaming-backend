@@ -23,7 +23,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'bootsnap', '>= 1.4.4', require: false
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
-# gem 'rack-cors'
+gem 'rack-cors'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -43,3 +43,4 @@ gem 'activerecord-reset-pk-sequence'
 gem "jwt", "~> 2.2"
 gem 'rest-client'
 gem 'json'
+gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
