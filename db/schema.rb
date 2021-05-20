@@ -16,9 +16,16 @@ ActiveRecord::Schema.define(version: 2021_05_19_175830) do
   enable_extension "plpgsql"
 
   create_table "comments", force: :cascade do |t|
-    t.string "comments"
+    t.string "comment"
     t.integer "post_id"
     t.integer "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "console_posts", force: :cascade do |t|
+    t.integer "console_id"
+    t.integer "post_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -34,13 +41,6 @@ ActiveRecord::Schema.define(version: 2021_05_19_175830) do
     t.string "video_url"
     t.string "img_url"
     t.integer "user_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "tag_posts", force: :cascade do |t|
-    t.integer "tag_id"
-    t.integer "post_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

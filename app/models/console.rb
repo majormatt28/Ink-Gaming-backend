@@ -1,4 +1,4 @@
 class Console < ApplicationRecord
-    has_many :tagposts
-    has_many :posts, through: :tagposts
+    has_many :consoleposts
+    has_many :posts, through: :consoleposts
 end
