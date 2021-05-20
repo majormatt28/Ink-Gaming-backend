@@ -42,7 +42,7 @@ post3 = Post.create(
     user_id: User.all.sample.id,
     content: "What are your thoughts on that new pokemon game that was annouced?",
     video_url: "null",
-    imag_url: "null"
+    img_url: "null"
 )
 
 comment1 = Comment.create(
@@ -64,18 +64,18 @@ comment3 = Comment.create(
 )
 
 tagpost1 = ConsolePost.create(
-    console_id: Console.all.sample.id,
-    post_id: Post.all.sample.id
+    console_id: Console.all.sample,
+    post_id: Post.all.sample
 )
 
 tagpost2 = ConsolePost.create(
-    console_id: Console.all.sample.id,
-    post_id: Post.all.sample.id
+    console_id: Console.all.sample,
+    post_id: Post.all.sample
 )
 
 tagpost3 = ConsolePost.create(
-    console_id: Console.all.sample.id,
-    post_id: Post.all.sample.id
+    console_id: Console.all.sample,
+    post_id: Post.all.sample
 )
 
 5.times do 
