@@ -1,11 +1,11 @@
 class ConsolePostsController < ApplicationController
     def index
-        tags = ConsolePost.all
-        render json: tags
+        console_posts = ConsolePost.all
+        render json: console_posts
     end
 
     def show
-        tag = ConsolePost.find(params[:id])
-        render json: tag
+        console_post = ConsolePost.find(params[:id])
+        render json: console_post
     end
 end

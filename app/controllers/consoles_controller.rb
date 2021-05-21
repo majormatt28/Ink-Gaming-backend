@@ -5,7 +5,8 @@ class ConsolesController < ApplicationController
     end
 
     def show
-        console = 
+        console = console.find(params[:id])
+        render json: console
     end
 
 end
