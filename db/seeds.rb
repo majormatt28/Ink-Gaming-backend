@@ -27,7 +27,7 @@ post1 = Post.create(
     user_id: User.all.sample.id,
     title: "A quick guide on how to beat the big bad",
     content: "How to beat Magnamalo",
-    link: 'https://www.youtube.com/watch?v=trsHBGr2FVM',
+    link: '<iframe width="2544" height="1160" src="https://www.youtube.com/embed/trsHBGr2FVM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
     media_type: "video"
 )
 
@@ -43,7 +43,8 @@ post3 = Post.create(
     user_id: User.all.sample.id,
     title: "New Pokemon game",
     content: "What are your thoughts on that new pokemon game that was annouced?",
-    # link: "https://static0.srcdn.com/wordpress/wp-content/uploads/2021/02/Pokemon-Legends-Arceus-What-To-Know-.jpg"
+    media_type: "image",
+    link: "https://static0.srcdn.com/wordpress/wp-content/uploads/2021/02/Pokemon-Legends-Arceus-What-To-Know-.jpg"
 )
 
 comment1 = Comment.create(

@@ -6,7 +6,11 @@ class PostsController < ApplicationController
 
     def show
         post = Post.find(params[:id])
-        render json: post
+        if post 
+            render json: post
+        else
+            render json: {error: 'Did not find any post'}
+        end
     end
 
     def create 
@@ -27,7 +31,7 @@ class PostsController < ApplicationController
     def destroy
         post = Post.find(params[:id])
         post.destroy
-        render json: {}
+        render json: post
     end
 
     private
