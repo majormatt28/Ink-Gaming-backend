@@ -1,6 +1,5 @@
 class ApplicationController < ActionController::API
     def authenticate
-        # byebug
         auth_header = request.headers["Authorization"]
         token = auth_header.split.last
         payload = JWT.decode(token, "my_secret", true, {algorithm:"HS256"})[0]

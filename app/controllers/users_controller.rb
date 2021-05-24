@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-    before_action :authenticate, only: [:me]
+    before_action :authenticate, only: [:me, :update]
     def index
         users = User.all
         render json: users
@@ -11,9 +11,9 @@ class UsersController < ApplicationController
     end
 
     def login
-        user = User.find(username: params[:username])
-        if user && user.athenticate(password: params[:password])
-            token = JWT.encode({user_id: user.id}, "my_secret", "HS256")
+        user = User.find_by(username: params[:username])
+        if user && user.authenticate(password: params[:password])
+            token = JWT.encode({user_id: user.id}, 'my_secret', 'HS256')
             render json: {user: UserSerializer.new(user), token: token}
         else
             render json: {errors: ["Invalid username or password"]}, status: :unauthorized
@@ -31,12 +31,12 @@ class UsersController < ApplicationController
     end
 
     def me
-        render json: current_user
+        render json: @current_user
     end
 
     def update
-        user = User.find(params[:id])
-        user.update(user_params)
+        @current_user.update(email: params[:email])
+        render json: @current_user
     end
 
     private

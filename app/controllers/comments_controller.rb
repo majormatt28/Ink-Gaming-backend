@@ -1,4 +1,14 @@
 class CommentsController < ApplicationController 
+    def index
+        comments = Comment.all
+        render json: comments
+    end
+
+    def show 
+        comment = Comment.find_by(params[:id])
+        render json: comment
+    end
+
     def create 
         comment = Comment.create(comment_params)
         if comment.valid?

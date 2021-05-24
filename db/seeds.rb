@@ -12,16 +12,16 @@ User.destroy_all
 User.reset_pk_sequence
 Post.destroy_all
 Post.reset_pk_sequence
-ConsolePost.destroy_all
-ConsolePost.reset_pk_sequence
+# ConsolePost.destroy_all
+# ConsolePost.reset_pk_sequence
 
 require 'faker'
 
 console_tags = ['Nintendo', 'Playstation', 'Xbox', 'PC']
 
-user1 = User.create(username: "Maseo", password: "abc123", email: "matt@matt.com")
+user1 = User.create(username: "maseo", password: "abc123", email: "matt@matt.com")
 
-user2 = User.create(username: "Ashley", password: "abc123", email: "ash@ash.com")
+user2 = User.create(username: "ashley", password: "321abc", email: "ash@ash.com")
 
 post1 = Post.create(
     user_id: User.all.sample.id,
@@ -65,26 +65,26 @@ comment3 = Comment.create(
     comment: Faker::Movies::StarWars.quote(character: "luke_skywalker")
 )
 
-tagpost1 = ConsolePost.create(
-    console_id: Console.all.sample,
-    post_id: Post.all.sample
-)
+# tagpost1 = ConsolePost.create(
+#     console_id: Console.all.sample,
+#     post_id: Post.all.sample
+# )
 
-tagpost2 = ConsolePost.create(
-    console_id: Console.all.sample,
-    post_id: Post.all.sample
-)
+# tagpost2 = ConsolePost.create(
+#     console_id: Console.all.sample,
+#     post_id: Post.all.sample
+# )
 
-tagpost3 = ConsolePost.create(
-    console_id: Console.all.sample,
-    post_id: Post.all.sample
-)
+# tagpost3 = ConsolePost.create(
+#     console_id: Console.all.sample,
+#     post_id: Post.all.sample
+# )
 
-5.times do 
-    Console.create(
-        console_name: console_tags.sample
-    )
-end
+# 5.times do 
+#     Console.create(
+#         console_name: console_tags.sample
+#     )
+# end
 
 
 puts "Properly Seeded"
