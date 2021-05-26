@@ -27,7 +27,7 @@ post1 = Post.create(
     user_id: User.all.sample.id,
     title: "A quick guide on how to beat the big bad",
     content: "How to beat Magnamalo",
-    link: '<iframe width="2544" height="1160" src="https://www.youtube.com/embed/trsHBGr2FVM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+    link: '<iframe src="https://www.youtube.com/embed/trsHBGr2FVM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
     media_type: "video"
 )
 
