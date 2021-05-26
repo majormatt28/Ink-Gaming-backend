@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::API
+    
     def authenticate
         auth_header = request.headers["Authorization"]
         token = auth_header.split.last
@@ -7,4 +8,5 @@ class ApplicationController < ActionController::API
     rescue
         render json: {errors: ["Unauthorized"]}, status: :unauthorized
     end
+    
 end
