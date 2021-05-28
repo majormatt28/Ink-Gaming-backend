@@ -23,7 +23,7 @@ class UsersController < ApplicationController
     def signup
         user = User.create(user_params)
         if user.valid?
-            token = JWT.encode({ user_id: user.id }, "my_secret", "HS256")
+            token = JWT.encode({user_id: user.id }, "my_secret", "HS256")
             render json: { user: UserSerializer.new(user), token: token }, status: :created
         else
             render json: { errors: user.errors.full_messages }, status: :unprocessable_entity
