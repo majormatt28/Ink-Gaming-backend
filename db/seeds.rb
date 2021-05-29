@@ -65,6 +65,13 @@ comment3 = Comment.create(
     comment: Faker::Movies::StarWars.quote(character: "luke_skywalker")
 )
 
+10.times do
+    Like.create(
+        post_id: Post.all.sample.id,
+        user_id: User.all.sample.id
+    )
+end
+
 # tagpost1 = ConsolePost.create(
 #     console_id: Console.all.sample,
 #     post_id: Post.all.sample
